@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rdelicad <rdelicad@student.42.com>         +#+  +:+       +#+         #
+#    By: rdelicad <rdelicad@gmail.com>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/18 13:34:16 by rdelicad          #+#    #+#              #
-#    Updated: 2023/09/18 13:34:58 by rdelicad         ###   ########.fr        #
+#    Updated: 2025/06/24 20:11:04 by rdelicad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,12 +53,12 @@ $(LIBFT_PATH) :
 # --------------------- mandatory -----------------------
 $(NAME_C) : $(LIBFT_PATH) 
 	@echo "$(YELLOW)$(BOLD)Compiling Client...$(RESET)"
-	@$(CC) $(CFLAGS) $(LIBFT_PATH) $(LIB_SYS) src/client.c -o $(NAME_C) 
+	@$(CC) $(CFLAGS) $(LIB_SYS) src/client.c $(LIBFT_PATH) -o $(NAME_C) 
 	@echo "$(GREEN)$(BOLD)Done.$(RESET)"
 
 $(NAME_S) : $(LIBFT_PATH) 
 	@echo "$(YELLOW)$(BOLD)Compiling Server...$(RESET)"
-	@$(CC) $(CFLAGS) $(LIBFT_PATH) $(LIB_SYS) src/server.c -o $(NAME_S) 
+	@$(CC) $(CFLAGS) $(LIB_SYS) src/server.c $(LIBFT_PATH) -o $(NAME_S) 
 	@echo "$(GREEN)$(BOLD)Done.$(RESET)"
 
 
@@ -70,12 +70,12 @@ $(OBJS) : obj/%.o : src/%.c
 
 $(NAME_CB) : $(LIBFT_PATH) 
 	@echo "$(YELLOW)$(BOLD)Compiling Client...$(RESET)"
-	@$(CC) $(CFLAGS) $(LIBFT_PATH) $(LIB_SYS) srcb/client_bonus.c -o $(NAME_CB) 
+	@$(CC) $(CFLAGS) $(LIB_SYS) srcb/client_bonus.c $(LIBFT_PATH) -o $(NAME_CB) 
 	@echo "$(GREEN)$(BOLD)Done.$(RESET)"
 
 $(NAME_SB) : $(LIBFT_PATH) 
 	@echo "$(YELLOW)$(BOLD)Compiling Server...$(RESET)"
-	@$(CC) $(CFLAGS) $(LIBFT_PATH) $(LIB_SYS) srcb/server_bonus.c -o $(NAME_SB) 
+	@$(CC) $(CFLAGS) $(LIB_SYS) srcb/server_bonus.c $(LIBFT_PATH) -o $(NAME_SB) 
 	@echo "$(GREEN)$(BOLD)Done.$(RESET)"
 
 
